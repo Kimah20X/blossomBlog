@@ -30,6 +30,7 @@ export default function PostPage() {
   }
   
   const recommendedPosts = posts.filter(p => p.category === post.category && p.id !== post.id).slice(0, 3);
+  const dataAiHint = `${post.category.toLowerCase()} ${post.tags?.[0]?.split(' ')[0] ?? ''}`.trim();
 
   const handleLike = () => {
     setLikes(isLiked ? likes - 1 : likes + 1);
@@ -73,7 +74,7 @@ export default function PostPage() {
         </div>
         
         <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-lg">
-            <Image src={post.imageUrl} alt={post.title} layout="fill" objectFit="cover" data-ai-hint="lifestyle fashion" />
+            <Image src={post.imageUrl} alt={post.title} fill className="object-cover" data-ai-hint={dataAiHint} />
         </div>
 
         <div className="text-lg text-foreground/90 leading-relaxed space-y-6">

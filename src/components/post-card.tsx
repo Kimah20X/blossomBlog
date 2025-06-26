@@ -10,6 +10,8 @@ interface PostCardProps {
 }
 
 export function PostCard({ post }: PostCardProps) {
+  const dataAiHint = `${post.category.toLowerCase()} ${post.tags?.[0]?.split(' ')[0] ?? ''}`.trim();
+  
   return (
     <Card className="flex flex-col overflow-hidden rounded-xl shadow-lg transition-transform hover:scale-[1.02] duration-300 ease-in-out">
       <CardHeader className="p-0">
@@ -19,7 +21,7 @@ export function PostCard({ post }: PostCardProps) {
             alt={post.title}
             fill
             className="object-cover"
-            data-ai-hint="lifestyle beauty"
+            data-ai-hint={dataAiHint}
           />
         </div>
         <div className="p-6 pb-2">
