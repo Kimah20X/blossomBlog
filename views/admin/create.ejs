@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="admin-form">
+        <div class="form-header">
+            <h1 class="page-title">Create New Post</h1>
+            <a href="/admin" class="btn btn-secondary">Back to Dashboard</a>
+        </div>
+
+        <form action="/admin/create" method="POST" class="post-form">
+            <div class="form-group">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" id="title" name="title" class="form-input" value="<%= post.title || '' %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="excerpt" class="form-label">Excerpt</label>
+                <textarea id="excerpt" name="excerpt" class="form-textarea" rows="3" required><%= post.excerpt || '' %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="content" class="form-label">Content</label>
+                <textarea id="content" name="content" class="form-textarea" rows="12" required><%= post.content || '' %></textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="category" class="form-label">Category</label>
+                    <select id="category" name="category" class="form-select" required>
+                        <option value="">Select Category</option>
+                        <option value="Lifestyle" <%= post.category === 'Lifestyle' ? 'selected' : '' %>>Lifestyle</option>
+                        <option value="Beauty" <%= post.category === 'Beauty' ? 'selected' : '' %>>Beauty</option>
+                        <option value="Fashion" <%= post.category === 'Fashion' ? 'selected' : '' %>>Fashion</option>
+                        <option value="Wellness" <%= post.category === 'Wellness' ? 'selected' : '' %>>Wellness</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="imageUrl" class="form-label">Image URL</label>
+                    <input type="url" id="imageUrl" name="imageUrl" class="form-input" value="<%= post.imageUrl || '' %>" placeholder="https://example.com/image.jpg">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="tags" class="form-label">Tags (comma separated)</label>
+                <input type="text" id="tags" name="tags" class="form-input" value="<%= post.tags ? post.tags.join(', ') : '' %>" placeholder="tag1, tag2, tag3">
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Create Post</button>
+                <a href="/admin" class="btn btn-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

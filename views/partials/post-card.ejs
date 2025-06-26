@@ -1,0 +1,27 @@
+<article class="post-card">
+    <div class="post-image">
+        <img src="<%= post.imageUrl %>" alt="<%= post.title %>" loading="lazy">
+    </div>
+    
+    <div class="post-content">
+        <div class="post-meta">
+            <span class="post-category"><%= post.category %></span>
+        </div>
+        
+        <h3 class="post-title">
+            <a href="/posts/<%= post.slug %>"><%= post.title %></a>
+        </h3>
+        
+        <p class="post-excerpt"><%= post.excerpt %></p>
+        
+        <div class="post-footer">
+            <a href="/posts/<%= post.slug %>" class="read-more">
+                Read More
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"/>
+                    <polyline points="12,5 19,12 12,19"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</article>

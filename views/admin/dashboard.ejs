@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="admin-dashboard">
+        <div class="dashboard-header">
+            <h1 class="page-title">Admin Dashboard</h1>
+            <a href="/admin/create" class="btn btn-primary">Create New Post</a>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Posts</h3>
+                <span class="stat-number"><%= stats.total %></span>
+            </div>
+            <div class="stat-card">
+                <h3>Published</h3>
+                <span class="stat-number"><%= stats.published %></span>
+            </div>
+            <div class="stat-card">
+                <h3>Drafts</h3>
+                <span class="stat-number"><%= stats.drafts %></span>
+            </div>
+        </div>
+
+        <div class="posts-table">
+            <h2>All Posts</h2>
+            <% if (posts.length > 0) { %>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% posts.forEach(post => { %>
+                            <tr>
+                                <td>
+                                    <a href="/posts/<%= post.slug %>" target="_blank"><%= post.title %></a>
+                                </td>
+                                <td><%= post.category %></td>
+                                <td>
+                                    <span class="status <%= post.published ? 'published' : 'draft' %>">
+                                        <%= post.published ? 'Published' : 'Draft' %>
+                                    </span>
+                                </td>
+                                <td><%= post.formattedDate %></td>
+                                <td class="actions">
+                                    <a href="/admin/edit/<%= post._id %>" class="btn btn-sm btn-secondary">Edit</a>
+                                    <form action="/admin/delete/<%= post._id %>?_method=DELETE" method="POST" style="display: inline;" onsubmit="return confirm('Are you sure?')">
+                                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            <% } else { %>
+                <p>No posts yet. <a href="/admin/create">Create your first post!</a></p>
+            <% } %>
+        </div>
+    </div>
+</div>

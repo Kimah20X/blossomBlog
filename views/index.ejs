@@ -1,0 +1,45 @@
+<div class="container">
+    <section class="hero">
+        <h1 class="hero-title">Welcome to the Blog</h1>
+        <p class="hero-subtitle">
+            A collection of thoughts on lifestyle, beauty, and wellness, sprinkled with a little magic.
+        </p>
+    </section>
+
+    <section class="categories-section" id="categories">
+        <div class="section-header">
+            <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3L13.82 8.18L19 10L13.82 11.82L12 17L10.18 11.82L5 10L10.18 8.18L12 3Z"/>
+                <path d="M4 20L5 17L8 16L5 15L4 12L3 15L0 16L3 17L4 20Z"/>
+                <path d="M20 5L19 8L16 9L19 10L20 13L21 10L24 9L21 8L20 5Z"/>
+            </svg>
+            <h2 class="section-title">Categories</h2>
+            <svg class="sparkle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3L13.82 8.18L19 10L13.82 11.82L12 17L10.18 11.82L5 10L10.18 8.18L12 3Z"/>
+                <path d="M4 20L5 17L8 16L5 15L4 12L3 15L0 16L3 17L4 20Z"/>
+                <path d="M20 5L19 8L16 9L19 10L20 13L21 10L24 9L21 8L20 5Z"/>
+            </svg>
+        </div>
+        
+        <div class="categories-filter">
+            <a href="/?category=All" class="category-btn <%= activeCategory === 'All' ? 'active' : '' %>">All</a>
+            <% categories.forEach(category => { %>
+                <a href="/?category=<%= category %>" class="category-btn <%= activeCategory === category ? 'active' : '' %>">
+                    <%= category %>
+                </a>
+            <% }) %>
+        </div>
+    </section>
+
+    <section class="posts-grid">
+        <% if (posts.length > 0) { %>
+            <% posts.forEach(post => { %>
+                <%- include('partials/post-card', { post: post }) %>
+            <% }) %>
+        <% } else { %>
+            <div class="no-posts">
+                <p>No posts found. <a href="/admin/create">Create your first post!</a></p>
+            </div>
+        <% } %>
+    </section>
+</div>
