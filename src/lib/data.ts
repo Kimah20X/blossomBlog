@@ -1,0 +1,96 @@
+import type { Post } from '@/lib/types';
+
+export const posts: Post[] = [
+  {
+    id: 1,
+    slug: 'morning-rituals-to-start-your-day-right',
+    title: 'Morning Rituals to Start Your Day Right',
+    excerpt: 'Discover simple morning rituals that can transform your day, boost your mood, and increase productivity.',
+    content: 'A well-structured morning routine can set the tone for your entire day. Instead of hitting snooze and rushing out the door, consider incorporating a few mindful practices. Start with a glass of water to rehydrate. Gentle stretching or a short yoga session can awaken your body. Follow this with a few minutes of meditation or journaling to clear your mind. A nutritious breakfast is non-negotiable! These small changes can lead to a more positive and productive life.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Lifestyle',
+    author: {
+      name: 'Elena Bloom',
+      avatarUrl: 'https://placehold.co/100x100.png',
+    },
+    date: 'July 15, 2024',
+    tags: ['morning routine', 'self-care', 'productivity', 'mindfulness'],
+  },
+  {
+    id: 2,
+    slug: 'the-ultimate-guide-to-a-glowing-skincare-routine',
+    title: 'The Ultimate Guide to a Glowing Skincare Routine',
+    excerpt: 'Unlock the secrets to radiant skin with our step-by-step guide to building the perfect skincare routine.',
+    content: 'Achieving a healthy glow starts with understanding your skin type. Is it oily, dry, combination, or sensitive? Once you know, you can choose the right products. A basic routine includes a gentle cleanser, a hydrating toner, a targeted serum (like Vitamin C for brightness), a moisturizer, and most importantly, sunscreen every single day. For an extra boost, incorporate exfoliation 2-3 times a week and a weekly face mask. Consistency is key to seeing results!',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Beauty',
+    author: {
+      name: 'Sophie Belle',
+      avatarUrl: 'https://placehold.co/100x100.png',
+    },
+    date: 'July 12, 2024',
+    tags: ['skincare', 'beauty tips', 'glowing skin', 'routine'],
+  },
+  {
+    id: 3,
+    slug: 'sustainable-fashion-how-to-build-a-conscious-closet',
+    title: 'Sustainable Fashion: How to Build a Conscious Closet',
+    excerpt: 'Embrace style that\'s kind to the planet. Learn how to curate a beautiful and sustainable wardrobe.',
+    content: 'Sustainable fashion is more than a trend; it\'s a movement towards mindful consumption. Start by auditing your current wardrobe and identifying what you truly love and wear. When you do shop, opt for quality over quantity. Look for natural fibers like organic cotton, linen, and Tencel. Thrifting and vintage shopping are fantastic ways to give clothes a second life. Learning basic mending skills can also extend the life of your favorite pieces. A conscious closet is both chic and responsible.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Fashion',
+    author: {
+      name: 'Chloe Verde',
+      avatarUrl: 'https://placehold.co/100x100.png',
+    },
+    date: 'July 10, 2024',
+    tags: ['sustainable fashion', 'eco-friendly', 'slow fashion', 'style'],
+  },
+  {
+    id: 4,
+    slug: 'five-minute-meditations-for-a-calm-mind',
+    title: 'Five-Minute Meditations for a Calm Mind',
+    excerpt: 'Feeling stressed? These quick and easy five-minute meditations can bring a sense of peace to your busiest days.',
+    content: 'You don\'t need hours to reap the benefits of meditation. Even five minutes can make a huge difference. Find a quiet spot and sit comfortably. Close your eyes and focus on your breath. Notice the sensation of the air entering and leaving your body. When your mind wanders, gently guide it back to your breath. You can also try a body scan, bringing awareness to each part of your body from your toes to your head. This simple practice can reduce anxiety and improve focus.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Wellness',
+    author: {
+      name: 'Luna serene',
+      avatarUrl: 'https://placehold.co/100x100.png',
+    },
+    date: 'July 8, 2024',
+    tags: ['meditation', 'wellness', 'mental health', 'stress relief'],
+  },
+  {
+    id: 5,
+    slug: 'decorating-your-space-on-a-budget',
+    title: 'Decorating Your Space on a Budget',
+    excerpt: 'Create a beautiful and personal space without breaking the bank. Here are our top tips for affordable home decor.',
+    content: 'A stylish home doesn\'t have to be expensive. Start by decluttering and rearranging your existing furniture. A fresh coat of paint can dramatically change a room. DIY art projects, like framing beautiful fabric or creating a gallery wall of personal photos, add a personal touch. Thriving houseplants add life and color. Shop at thrift stores and flea markets for unique furniture and decor items that you can upcycle with a little creativity.',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Lifestyle',
+    author: {
+      name: 'Elena Bloom',
+      avatarUrl: 'https://placehold.co/100x100.png',
+    },
+    date: 'July 5, 2024',
+    tags: ['home decor', 'DIY', 'budget decorating', 'interior design'],
+  },
+    {
+    id: 6,
+    slug: 'summer-fashion-essentials-you-need',
+    title: 'Summer Fashion Essentials You Need',
+    excerpt: 'Stay cool and chic this summer with these must-have fashion pieces for your wardrobe.',
+    content: 'Summer is all about effortless style. A flowy sundress is a must-have for any occasion, from picnics to beach days. Pair it with a comfortable sandals or espadrilles. A wide-brimmed hat not only looks glamorous but also protects you from the sun. Don\'t forget a versatile tote bag to carry all your essentials. Light fabrics like linen and cotton are your best friends in the heat. Embrace bright colors and fun prints to celebrate the season!',
+    imageUrl: 'https://placehold.co/600x400.png',
+    category: 'Fashion',
+    author: {
+      name: 'Chloe Verde',
+      avatarUrl: 'https://placehold.co/100x100.png',
+    },
+    date: 'July 2, 2024',
+    tags: ['summer fashion', 'style guide', 'wardrobe essentials', 'outfits'],
+  },
+];
+
+export const categories = Array.from(new Set(posts.map(p => p.category)));
