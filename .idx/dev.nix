@@ -7,6 +7,7 @@
   packages = [
     pkgs.nodejs_20
     pkgs.zulu
+    pkgs.mongodb
   ];
   # Sets environment variables in the workspace
   env = {};
@@ -16,6 +17,11 @@
     detect = true;
     projectId = "demo-app";
     services = ["auth" "firestore"];
+  };
+  # Configure MongoDB service
+  services.mongodb = {
+    enable = true;
+    port = 27017;
   };
   idx = {
     # Search for the extensions you want on https://open-vsx.org/ and use "publisher.id"
